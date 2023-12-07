@@ -1,5 +1,4 @@
 ################### NeuroCombat Harmonization ################### 
-### reference: https://github.com/Jfortin1/ComBatHarmonization/tree/master/R
 ### procedures
 # 0. load data
 # 1. make a site variable as 'int' > assign it as vatch variable in step 5
@@ -11,7 +10,7 @@
 # 7. final shape & save the results
 
 ### 0. load data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/2.pediatric/2.afterPrep/Pediatric_data for anlaysis/2_z-scaled")
+setwd("../ENIGMA-OCD/final/2.pediatric/2.afterPrep/Pediatric_data for anlaysis/2_z-scaled")
 df_train <- read.csv("T.Dx_Pediatric_S.Train_253_v.z.norm.211218.csv", header = T) #253
 df_test <- read.csv("T.Dx_Pediatric_S.Test_64_v.z.norm.211218.csv", header = T) #64
 
@@ -101,20 +100,6 @@ brain_test_x <- brain_test #back up
 #)
 #miss_case_summary(brain_train_x) #now, there are no missing values
 
-'''
-### data z-standardization
-library(caret)
-## train set
-train_brain_pre_z <- preProcess(brain_train_x, method = c("center", "scale"))
-train_brain_z <- predict(train_brain_pre_z, brain_train_x)
-train_z <- cbind(df_train[c(1:20, 273)], train_brain_z) #21:272 -> brain var / 273: site_int
-
-## test set
-test_brain_pre_z <- preProcess(brain_test_x, method = c("center", "scale"))
-test_brain_z <- predict(test_brain_pre_z, brain_test_x)
-test_z <- cbind(df_test[c(1:20, 273)], test_brain_z) #21:272 -> brain var / 273: site_int
-'''
-
 train_brain_z <- brain_train_x
 test_brain_z <- brain_test_x
 
@@ -180,7 +165,7 @@ test_harmo <- cbind(test_front, test_combat, test_back)
 test_harmo.cov_as <- cbind(test_front, test_combat.cov_as, test_back)
 
 # save the results
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/3.NeuroCombat/2.pediatric")
+setwd("../ENIGMA-OCD/final/3.NeuroCombat/2.pediatric")
 # train set
 write.csv(train_harmo, file="Pedi_dx_train_harmo.csv", row.names = F, na = "")
 write.csv(train_harmo.cov_as, file="Pedi_dx_train_harmo_cov.csv", row.names = F, na = "")
