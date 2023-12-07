@@ -2,9 +2,10 @@ library(tidyverse)
 library(magrittr)
 rm(list = ls())
 # path
-path_source <- "C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+
 #####################################
-##### adult - med01 ºˆ¡§ #####
+##### adult - med01 #####
 #####################################
 setwd(paste0(path_source, '/1.adult'))
 
@@ -24,14 +25,13 @@ df_adult_med12_test2 <- df_adult_med12_train %>%
 df_adult_med12_train2 <- df_adult_med12_train %>% 
   filter(Site != 'Amsterdam' & Site != 'Kyoto' & Site != 'Shanghai') #  428 x 273
 
-#### save new adult med12 µ•¿Ã≈Õ
+#### save new adult med12 data
 setwd(paste0(path_source, '/1.adult'))
 write.csv(row.names = F, df_adult_med12_train2, 'T.MedUnmedOCD_Adult_S.Train2_428_v.z.norm.220302.csv')
 write.csv(row.names = F, df_adult_med12_test2, 'T.MedUnmedOCD_Adult_S.Test2_256_v.z.norm.220302.csv')
 
-
 #####################################
-#### pediatric - med12 Ω««Ë ºˆ¡§ ####
+#### pediatric - med12 (exp) ####
 #####################################
 setwd(paste0(path_source, '/2.pediatric'))
 getwd()
@@ -55,13 +55,11 @@ write.csv(row.names = F, df_pedi_med12_train2, 'T.MedUnmedOCD_Pediatric_S.Train2
 write.csv(row.names = F, df_pedi_med12_test2, 'T.MedUnmedOCD_Pediatric_S.Test2_49_v.z.norm.220302.csv')
 
 
-
-
 #####################################
-##### adult - bangalore ¡¶ø‹ #####
+##### adult - bangalore (excl) #####
 #####################################
 rm(list = ls())
-path_source <- "C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 
 setwd(paste0(path_source, '/1.adult'))
 df_adult_dx_train <- read_csv('T.Dx_Adult_S.Train_1069_v.z.norm.211123.csv')
@@ -78,23 +76,19 @@ write.csv(row.names = F, df_adult_dx_train, 'T.Dx_Adult_S.Train2_839_v.z.norm.22
 write.csv(row.names = F, df_adult_dx_test, 'T.Dx_Adult_S.Test2_208_v.z.norm.220302.csv')
 
 
-
 #####################################
 #### [4] med OCD vs. HC #####
 #####################################
 #####################################
 rm(list = ls())
-path_source <- "C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
-
-setwd(paste0(path_source, '/1.adult'))
-df_adult_dx_total <- 
+path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 
 
 #####################################
 ###### Data description of extra experiments ##########
 
-##### 1. adult - bangalore ¡¶ø‹
-path_source <- "C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+##### 1. adult - bangalore Ï†úÏô∏
+path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 setwd(paste0(path_source, '/1.adult'))
 getwd()
 
@@ -117,7 +111,3 @@ df_adult_med12_total_new <- df_adult_med12_train_new %>% bind_rows(df_adult_med1
 df_adult_med12_total_new %>%xtabs(~Med.UnmedOCD, data = .)
 df_adult_med12_train_new %>%xtabs(~Med.UnmedOCD, data = .)
 df_adult_med12_test_new %>%xtabs(~Med.UnmedOCD, data = .)
-
-
-
-
