@@ -9,24 +9,7 @@ library(skimr)
 
 
 #### Make list for column name  ####
-
-list_cov <- c('Dx',
-              'Age',
-              'AgeSQ',
-              'Sex',
-              'Med',
-              'AO',
-              'Dur',
-              'Sev',
-              'Agr_Check',
-              'Clean',
-              'Sex_Rel',
-              'Hoard',
-              'Ord',
-              'Anx',
-              'CurAnx',
-              'Dep',
-              'CurDep')
+list_cov <- c('Dx','Age','AgeSQ','Sex','Med','AO','Dur','Sev','Agr_Check','Clean','Sex_Rel','Hoard','Ord','Anx','CurAnx','Dep','CurDep')
 
 list_FA <- c('ACR.FA',	             'ACR.L.FA',	             'ACR.R.FA',	             'ALIC.FA',	             'ALIC.L.FA',	             'ALIC.R.FA',	             'AverageFA',	             'BCC.FA',	             'CC.FA',	             'CGC.FA',	             'CGC.L.FA',	             'CGC.R.FA',	             'CGH.FA',	             'CGH.L.FA',	             'CGH.R.FA',	             'CR.FA',	             'CR.L.FA',	             'CR.R.FA',	             'CST.FA',	             'CST.L.FA',	             'CST.R.FA',	             'EC.FA',	             'EC.L.FA',	             'EC.R.FA',	            'FX.FA',	             'FX.ST.L.FA',	             'FX.ST.R.FA',	             'FXST.FA',	             'GCC.FA',	             'IC.FA',	            'IC.L.FA',	             'IC.R.FA',	             'IFO.FA',	             'IFO.L.FA',	             'IFO.R.FA',	             'PCR.FA',	             'PCR.L.FA',	             'PCR.R.FA',	             'PLIC.FA',	             'PLIC.L.FA',	             'PLIC.R.FA',	             'PTR.FA',	             'PTR.L.FA',	             'PTR.R.FA',	             'RLIC.FA',	             'RLIC.L.FA',	             'RLIC.R.FA',	             'SCC.FA',	             'SCR.FA',	             'SCR.L.FA',	             'SCR.R.FA',	             'SFO.FA',	             'SFO.L.FA',	             'SFO.R.FA',	             'SLF.FA',	             'SLF.L.FA',	             'SLF.R.FA',	             'SS.FA',	             'SS.L.FA',	             'SS.R.FA',	             'UNC.FA',	             'UNC.L.FA',	             'UNC.R.FA')
 
@@ -35,8 +18,6 @@ list_MD <- c('ACR.MD',	             'ACR.L.MD',	             'ACR.R.MD',	       
 list_RD <- c( 'ACR.RD',	             'ACR.L.RD',	             'ACR.R.RD',	             'ALIC.RD',	             'ALIC.L.RD',	             'ALIC.R.RD',	             'AverageRD',	             'BCC.RD',	             'CC.RD',	             'CGC.RD',	             'CGC.L.RD',	             'CGC.R.RD',	             'CGH.RD',	             'CGH.L.RD',	             'CGH.R.RD',	             'CR.RD',	             'CR.L.RD',	             'CR.R.RD',	             'CST.RD',	             'CST.L.RD',	             'CST.R.RD',	             'EC.RD',	             'EC.L.RD',	             'EC.R.RD',	            'FX.RD',	             'FX.ST.L.RD',	             'FX.ST.R.RD',	             'FXST.RD',	             'GCC.RD',	             'IC.RD',	            'IC.L.RD',	             'IC.R.RD',	             'IFO.RD',	             'IFO.L.RD',	             'IFO.R.RD',	             'PCR.RD',	             'PCR.L.RD',	             'PCR.R.RD',	             'PLIC.RD',	             'PLIC.L.RD',	             'PLIC.R.RD',	             'PTR.RD',	             'PTR.L.RD',	             'PTR.R.RD',	             'RLIC.RD',	             'RLIC.L.RD',	             'RLIC.R.RD',	             'SCC.RD',	             'SCR.RD',	             'SCR.L.RD',	             'SCR.R.RD',	             'SFO.RD',	             'SFO.L.RD',	             'SFO.R.RD',	             'SLF.RD',	             'SLF.L.RD',	             'SLF.R.RD',	             'SS.RD',	             'SS.L.RD',	             'SS.R.RD',	             'UNC.RD',	             'UNC.L.RD',	             'UNC.R.RD')
 
 list_AD <- c( 'ACR.AD',	             'ACR.L.AD',	             'ACR.R.AD',	             'ALIC.AD',	             'ALIC.L.AD',	             'ALIC.R.AD',	             'AverageAD',	             'BCC.AD',	             'CC.AD',	             'CGC.AD',	             'CGC.L.AD',	             'CGC.R.AD',	             'CGH.AD',	             'CGH.L.AD',	             'CGH.R.AD',	             'CR.AD',	             'CR.L.AD',	             'CR.R.AD',	             'CST.AD',	             'CST.L.AD',	             'CST.R.AD',	             'EC.AD',	             'EC.L.AD',	             'EC.R.AD',	            'FX.AD',	             'FX.ST.L.AD',	             'FX.ST.R.AD',	             'FXST.AD',	             'GCC.AD',	             'IC.AD',	            'IC.L.AD',	             'IC.R.AD',	             'IFO.AD',	             'IFO.L.AD',	             'IFO.R.AD',	             'PCR.AD',	             'PCR.L.AD',	             'PCR.R.AD',	             'PLIC.AD',	             'PLIC.L.AD',	             'PLIC.R.AD',	             'PTR.AD',	             'PTR.L.AD',	             'PTR.R.AD',	             'RLIC.AD',	             'RLIC.L.AD',	             'RLIC.R.AD',	             'SCC.AD',	             'SCR.AD',	             'SCR.L.AD',	             'SCR.R.AD',	             'SFO.AD',	             'SFO.L.AD',	             'SFO.R.AD',	             'SLF.AD',	             'SLF.L.AD',	             'SLF.R.AD',	             'SS.AD',	             'SS.L.AD',	             'SS.R.AD',	             'UNC.AD',	             'UNC.L.AD',	             'UNC.R.AD')
-
-
 
 
 # FA, MD, RD, AD: 63 variables
@@ -56,21 +37,21 @@ list_AD <- c( 'ACR.AD',	             'ACR.L.AD',	             'ACR.R.AD',	      
 '''
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 AmsterdamcombinedROItable = read.csv(file='amsterdam_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 
 AmsterdamMD = read.csv(file='Amsterdam_VUMC_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 
 AmsterdamRD = read.csv(file='Amsterdam_VUMC_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 
 AmsterdamAD = read.csv(file='Amsterdam_VUMC_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
@@ -144,19 +125,19 @@ Amsterdam_merged <- AmsterdamcombinedROItable %>%
 '''
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 BangalorecombinedROItable = read.csv(file='bangelore_combinedroitablefa.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 BangaloreMD = read.csv(file='Bangalore_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 BangaloreRD = read.csv(file='Bangalore_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 BangaloreAD = read.csv(file='Bangalore_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 BangalorecombinedROItable
@@ -170,24 +151,7 @@ BangalorecombinedROItable <- rename(BangalorecombinedROItable, Sex_Rel = Sex_rel
 BangalorecombinedROItable <- rename(BangalorecombinedROItable, AgeSQ = AgeSq)
 
 #### 2. Bangalore - Variable order setting ####
-BangalorecombinedROItable<- BangalorecombinedROItable %>%  relocate(c(subjectID,
-                                                                      Dx,
-                                                                      Age,
-                                                                      AgeSQ,
-                                                                      Sex,
-                                                                      Med,
-                                                                      AO,
-                                                                      Dur,
-                                                                      Sev,
-                                                                      Agr_Check,
-                                                                      Clean,
-                                                                      Sex_Rel,
-                                                                      Hoard,
-                                                                      Ord,
-                                                                      Anx,
-                                                                      CurAnx,
-                                                                      Dep,
-                                                                      CurDep))
+BangalorecombinedROItable<- BangalorecombinedROItable %>%  relocate(c(subjectID, Dx, Age, AgeSQ, Sex, Med, AO, Dur, Sev, Agr_Check, Clean, Sex_Rel, Hoard, Ord, Anx, CurAnx, Dep, CurDep))
 
 #### 2. Bangalore - Variable name setting - DTI ####
 # combined ROI
@@ -239,17 +203,17 @@ Bangalore_merged <- BangalorecombinedROItable %>%
 
 #### 3. Capetown - Load dataset ####
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 CapetowncombinedROItable = read.csv(file='capetown_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 CapetownMD = read.csv(file='CapeTown_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 CapetownRD = read.csv(file='CapeTown_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 CapetownAD = read.csv(file='CapeTown_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 CapetowncombinedROItable
@@ -309,20 +273,20 @@ Capetown_merged <- CapetowncombinedROItable %>%
 
 #### 4. Kyoto - Load dataset ####
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 KyotocombinedROItable = read.csv(file='kyotocombinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 KyotoMD = read.csv(file='Kyoto_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 KyotoRD = read.csv(file='Kyoto_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 KyotoAD = read.csv(file='Kyoto_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 KyotocombinedROItable
@@ -409,29 +373,24 @@ Kyoto_merged <- KyotocombinedROItable %>%
 Kyoto_merged
 
 
-
-
-
-
-
 #### 5. Milan ####
 #### 5. Milan - Data load ####
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 MilancombinedROItable = read.csv(file='milan_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 MilanMD = read.csv(file='Milan_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 MilanRD = read.csv(file='Milan_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 MilanAD = read.csv(file='Milan_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 MilancombinedROItable
@@ -516,20 +475,20 @@ Milan_merged
 #### 6. Mountsinai - Load dataset####
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 MountsinaicombinedROItable = read.csv(file='mountsinai_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 MountsinaiMD = read.csv(file='MountSinai_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 MountsinaiRD = read.csv(file='MountSinai_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 MountsinaiAD = read.csv(file='MountSinai_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 MountsinaicombinedROItable
@@ -588,20 +547,20 @@ Mountsinai_merged <- MountsinaicombinedROItable %>%
 #### 7. Munich - Data load####
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 MunichcombinedROItable = read.csv(file='munich_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 MunichMD = read.csv(file='Munich_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 MunichRD = read.csv(file='Munich_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 MunichAD = read.csv(file='Munich_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 MunichcombinedROItable
@@ -687,20 +646,20 @@ Munich_merged
 
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 RomecombinedROItable = read.csv(file='rome_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 RomeMD = read.csv(file='Rome_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 RomeRD = read.csv(file='Rome_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 RomeAD = read.csv(file='Rome_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 RomecombinedROItable
@@ -757,20 +716,20 @@ Rome_merged
 #### 9. Saopaulo - Load dataset  ####
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 SaopaulocombinedROItable = read.csv(file='saopaulo_combinedROItable_Cha.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 SaopauloMD = read.csv(file='saopaolo_combinedroitable_md.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 SaopauloRD = read.csv(file='saopaolo_combinedroitable_rd.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 SaopauloAD = read.csv(file='saopaolo_combinedroitable_ad.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 SaopaulocombinedROItable
@@ -848,28 +807,24 @@ Saopaulo_merged
 
 
 
-
-
-
-
 #### 10. Shanghai #### 
 #### 10. Shanghai - Load data#### 
 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 ShanghaicombinedROItable = read.csv(file='shangai_combinedROItable_updated.v.21.11.13.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 ShanghaiMD = read.csv(file='Shangai_combinedROItable_MD_updated.v.21.11.13.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 ShanghaiRD = read.csv(file='Shangai_combinedROItable_RD_updated.v.21.11.13.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 ShanghaiAD = read.csv(file='Shangai_combinedROItable_AD_updated.v.21.11.13.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 ShanghaicombinedROItable
@@ -928,21 +883,21 @@ Shanghai_merged
 #### 11. Seoul#### 
 #### 11. Seoul - Load data#### 
 # combined ROI
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 
 SeoulcombinedROItable = read.csv(file='seoul_updated_combinedROItable.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # MD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 
 SeoulMD = read.csv(file='Seoul_updated_combinedROItable_MD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # RD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 SeoulRD = read.csv(file='Seoul_updated_combinedROItable_RD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 # AD
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 SeoulAD = read.csv(file='Seoul_updated_combinedROItable_AD.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 SeoulcombinedROItable
@@ -1002,10 +957,6 @@ Seoul_merged
 
 
 
-
-
-
-
 #######################################################################
 
 #### Merging across site ####
@@ -1038,11 +989,10 @@ table(Shanghai_merged$Site)
 table(Seoul_merged$Site)
 
 #######################################################################
-
 # save data 
 #######################################################################
 
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/1_Siteº° merged")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/1_Siteë³„ merged")
 Amsterdam_merged <- Amsterdam_merged %>% relocate(subjectID, Site)
 Bangalore_merged <- Bangalore_merged %>% relocate(subjectID, Site)
 Capetown_merged <- Capetown_merged %>% relocate(subjectID, Site)
