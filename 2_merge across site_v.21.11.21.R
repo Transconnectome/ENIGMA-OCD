@@ -3,7 +3,7 @@ library(naniar)
 library(skimr)
 
 # Load dataset
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/1_Siteº° merged")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/1_SiteÂºÂ° merged")
 
 Amsterdam_merged <- read.csv(file='Merged_Amsterdam_79_v.21.11.16.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 Bangalore_merged <- read.csv(file='Merged_Bangalore_290_v.21.11.16.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
@@ -106,37 +106,9 @@ df_11site_merged_Adult <- df_11site_merged_Adult %>% relocate(subjectkey, Dx, Si
 df_11site_merged_Adult
 
 # 8. save dataset
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
 
 write.csv(df_11site_merged_Adult, file = 'T.Dx_Adult_1336_v.21.11.22.csv', row.names = FALSE)
 
 #write.csv(df_11site_merged_Adult_Only.MedUnmedOCD, file = 'T.MedUnmedOCD_Adult_684_v.21.11.22.csv', row.names = FALSE)
 #write.csv(df_11site_merged_Adult_Only.UnmedOCDHC, file = 'T.UnmedOCD.HC_Adult_1070_v.21.11.22.csv', row.names = FALSE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
