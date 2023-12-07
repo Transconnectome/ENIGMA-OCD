@@ -7,7 +7,7 @@ library(tigerstats)
 
 #### load dataset ####
 # non imputed version
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
 df_adult <- read.csv('T.Dx_Adult_1336_v.21.11.22.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 
@@ -153,7 +153,7 @@ df_adult %>%
 
 
 #### save file ####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
 write.csv(df_adult, 'T.Dx_Adult_1336_v.cleaned.21.11.22.csv', row.names = FALSE)
 
 
