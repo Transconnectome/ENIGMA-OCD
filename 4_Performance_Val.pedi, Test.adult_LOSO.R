@@ -6,7 +6,7 @@ library(pROC)
 
 
 #### 1. Set path 
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Dx_V.pedi_T.adult_LOSO")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Dx_V.pedi_T.adult_LOSO")
 
 
 #### 2. Load data 
@@ -15,7 +15,7 @@ proba_test <- read_csv('h2oai_experiment_Dx_V.pedi_T.adult_LOSO_test_predictions
 
 
 #### 3. Validation result performance ####
-#### siteº° µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö ÆÄ¾Ç #### 
+#### data check by site #### 
 
 proba_val %>% 
   xtabs(~Site + Dx, data= .) %>% 
@@ -28,7 +28,7 @@ proba_test %>%
 
 
 #### Validation set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### ã„´ 1. draw ROC curve of each site ####
 #### trimming output ####
 
 col_names <- c('auc_l', 'auc_mean', 'auc_h', 'threshold', 'acc_mean', 'sensi_mean', 'speci_mean', 
@@ -64,7 +64,7 @@ write.csv(temp_frame, row.names = T, 'res_proc_val.csv')
 
 
 #### Replication set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### ã„´ 1. draw ROC curve of each site ####
 
 test.roc <- proba_test %>% 
   roc(Dx, Dx.1)
@@ -73,20 +73,3 @@ ci.auc(test.roc)
 coords(test.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
 ci.coords(test.roc, x='best' , input = "threshold", 
           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
