@@ -9,7 +9,7 @@ library(caret)
 
 ##### load dataset #####
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split")
 # Target Outcome: Dx
 df_T.Dx_Train <- read.csv('T.Dx_Adult_S.Train_1069_v.211123.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 df_T.Dx_Test <- read.csv('T.Dx_Adult_S.Test_267_v.211122.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
@@ -242,7 +242,7 @@ df_T.UnmedHC_Test # original
 
 
 #### Save file ####
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled")
+setwd("../ENIGMA-OCD/0.Data/Analysis/2_z-scaled")
 
 # Target Outcome: Dx
 write.csv(df_T.Dx_Train_num_z_norm3, file ='T.Dx_Adult_S.Train_1069_v.z.norm.211123.csv', row.names = FALSE)
