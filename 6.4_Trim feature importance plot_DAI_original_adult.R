@@ -3,7 +3,7 @@ library(magrittr)
 
 
 #### Load codebook #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Codebook")
+setwd("../ENIGMA-OCD/0.Data/Codebook")
 df_cb <- read_csv('Codebook_v.Base.csv') # codebook:  254 x 5
 df_cb_ <- read_csv('Codebook_v._.csv') # codebook:  254 x 5
 
@@ -12,8 +12,8 @@ df_cb
 
 
 ##### set working directory to directory of adult DAI results ####
-path_raw <- "C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4.1. Feature importnace_DAI_adult"
-path_out <- "C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4.1. Feature importnace_DAI_adult/Trimmed_by code"
+path_raw <- "../ENIGMA-OCD/3.Documentations/Tables/4.1. Feature importnace_DAI_adult"
+path_out <- "../ENIGMA-OCD/3.Documentations/Tables/4.1. Feature importnace_DAI_adult/Trimmed_by code"
 
 #### Adult, Dx, scaled #####
 # load raw
