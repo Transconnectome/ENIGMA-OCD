@@ -7,7 +7,7 @@
 ##########################################################################
 
 ###### load prediction probability data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/4.h2oDAI/1.adult/2.NeuroCombat/T.Dx_D.harmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.28")
+setwd("../ENIGMA-OCD/final/4.h2oDAI/1.adult/2.NeuroCombat/T.Dx_D.harmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.28")
 train_pred <- read.csv("train_preds_custom.csv")
 test_pred <- read.csv("test_preds_custom.csv")
 
@@ -104,7 +104,6 @@ qqline(test_pred_OCD$Dx.1)
 ##########################################################################
 ########## 3. sample characteristics ########## 
 ##########################################################################
-
 ##### description analysis of "Dx.1" (prediction probability) by "dx (diagnosis)" group
 train_pred %>% 
   group_by(Dx) %>%
