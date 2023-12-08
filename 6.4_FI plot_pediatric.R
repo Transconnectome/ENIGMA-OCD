@@ -5,9 +5,9 @@ library(magrittr)
 
 rm(list = ls())
 
-# path_raw.pedi <- "C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code"
+# path_raw.pedi <- "../ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code"
 # setwd(path_raw.pedi)
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4. Feature importance tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code")
+setwd("../ENIGMA-OCD/3.Documentations/Tables/4. Feature importance tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code")
 
 #### Load dataset ####
 df_dx.pedi  <- read_csv('Pedi_Dx_orig features_scaled_trimmed.csv')
@@ -27,8 +27,6 @@ df_dx.pedi %>%
 
 plot_dx.pedi
   
-
-
 
 #### Med 01, pediatric, scaled ####
 
