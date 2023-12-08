@@ -8,7 +8,7 @@ library(magrittr)
 
 # Data: train/validation set - z-scaled
 
-setwd("C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 
 df_adult_val <- read_csv('train_preds_custom.csv') # 1,068 x 272
 
@@ -37,8 +37,6 @@ df_adult_val %<>%
   mutate(Male = ifelse(Sex == 1, 'Male', 'Female')) # 1,336 x 274
 
 
-
-
 #### Set datatype ####
 df_adult_val$Sex <- as.factor(df_adult_val$Sex)
 df_adult_val$Dx <- as.factor(df_adult_val$Dx) 
@@ -61,8 +59,6 @@ df_adult_val$Hoard <- as.factor(df_adult_val$Hoard)
 #### Make subset ####
 df_adult_val_ocd <- df_adult_val %>% 
   filter(Dx_charac == 'OCD')
-
-
 
 
 #### OCD group summary - NA correctly input? ####
@@ -121,16 +117,13 @@ str(df_adult_val_ocd[1:30])
 
 ####################################################################################
 ####################################################################################
-
 #### site effects on predicted probability ####
-
 ####################################################################################
 ####################################################################################
 ####################################################################################
 
 
 ##########################################################################
-
 # DV: Dx.1
 # covariate : 
 # Demo: Age, Sex, Site 
@@ -139,7 +132,6 @@ str(df_adult_val_ocd[1:30])
 # Average DTI 
 
 # Result- 
-
 ###########################################################################
 
 #### Demographic ####
@@ -164,20 +156,16 @@ glm.AO_Cov.Demo.DTI <- df_adult_val_ocd %>%
 summary(glm.AO_Cov.Demo.DTI)
 anova(glm.AO_Cov.Demo.DTI)
 
-
 # Duration of illness
 glm.Dur_Cov.Demo.DTI <- df_adult_val_ocd %>% 
   lm(Dx.1 ~ Dur + Age + Sex  +  AverageFA  + AverageAD + Site, data = .) # with cov
 summary(glm.Dur_Cov.Demo.DTI)
 anova(glm.Dur_Cov.Demo.DTI)
 
-
 # Medication 
 glm.Med_12_Cov.Demo.DTI <- lm(data=df_adult_val_ocd, Dx.1 ~ Med_12 + Age + Sex  + AverageFA + AverageAD + Site)
 summary(glm.Med_12_Cov.Demo.DTI)
 anova(glm.Med_12_Cov.Demo.DTI)
-
-
 
 
 # comorbidity
@@ -196,8 +184,6 @@ anova(glm.Dep_Cov.Demo.DTI)
 glm.CurDep_Cov.Demo.DTI <- lm(data=df_adult_val_ocd, Dx.1 ~ CurDep + Age + Sex  + AverageFA +AverageAD + Site)
 summary(glm.CurDep_Cov.Demo.DTI)
 anova(glm.CurDep_Cov.Demo.DTI)
-
-
 
 # Subsymptoms
 glm.Agr_Cov.Demo.DTI <- lm(data=df_adult_val_ocd, Dx.1 ~ Agr_Check + Age + Sex + AverageFA + AverageAD + Site)
@@ -368,7 +354,7 @@ df_adult_val %>%
 
 df_adult_val %>% 
   xtabs(~ Dx + Dx_predicted, data = ., addNA = T)
-print('¿Ã∞‘ πŸ∑Œ confusion matrix≥◊. ¿Ã∞… ∫Øºˆ∑Œ ∏∏µÈæÓ¡÷¿⁄. ')
+print('Ïù¥Í≤å Î∞îÎ°ú confusion matrixÎÑ§. Ïù¥Í±∏ Î≥ÄÏàòÎ°ú ÎßåÎì§Ïñ¥Ï£ºÏûê. ')
 
 
 
@@ -399,7 +385,7 @@ df_adult_val %<>%
          False_prediction_total = ifelse(ConfusionMatrix == 'FN' | ConfusionMatrix == 'FP', 1, 0))
 
 df_adult_val %>% 
-  xtabs(~ ConfusionMatrix + True_prediction_total, data = ., addNA = T) # 1ø° TN, TP∏∏ ¿÷¿Ω¿ª »Æ¿Œ
+  xtabs(~ ConfusionMatrix + True_prediction_total, data = ., addNA = T) # 1Ïóê TN, TPÎßå ÏûàÏùåÏùÑ ÌôïÏù∏
 df_adult_val %>% 
   xtabs(~ ConfusionMatrix + False_prediction_total, data = ., addNA = T)
 
