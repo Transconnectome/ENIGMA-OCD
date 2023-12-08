@@ -12,12 +12,12 @@ library(ggthemes)
 ###################################
 ########## 1. load data ########## 
 ##################################
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/3.NeuroCombat/1.adult")
+setwd("../ENIGMA-OCD/final/3.NeuroCombat/1.adult")
 adult_train <- read.csv("Adult_dx_train_harmo.csv")
 adult_test <- read.csv("Adult_dx_test_harmo.csv")
 adult_total <- rbind(adult_train, adult_test)
 
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/3.NeuroCombat/2.pediatric")
+setwd("../ENIGMA-OCD/final/3.NeuroCombat/2.pediatric")
 pedi_train <- read.csv("Pedi_dx_train_harmo.csv")
 pedi_test <- read.csv("Pedi_dx_test_harmo.csv")
 pedi_total <- rbind(pedi_train, pedi_test)
