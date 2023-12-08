@@ -1,7 +1,7 @@
 library(tidyverse)
 library(magrittr)
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled/1.adult")
+setwd("../ENIGMA-OCD/0.Data/Analysis/2_z-scaled/1.adult")
 
 df <- read_csv('T.Dx_Adult_S.Test_267_v.z.norm.211123.csv')
 df %>% names()
