@@ -4,7 +4,7 @@ library(magrittr)
 rm(list = ls())
 
 #### Load codebook #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Codebook")
+setwd("../ENIGMA-OCD/0.Data/Codebook")
 df_cb <- read_csv('Codebook_v.Base.csv') # codebook:  254 x 5
 df_cb_ <- read_csv('Codebook_v._.csv') # codebook:  254 x 5
 
@@ -13,8 +13,8 @@ df_cb
 
 
 ##### set working directory to directory of adult DAI results ####
-path_raw <- "C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric"
-path_out <- "C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code"
+path_raw <- "../ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric"
+path_out <- "../ENIGMA-OCD/3.Documentations/Tables/4.2. Feature importance_DAI_pediatric/Trimmed_by_code"
 
 
 
@@ -78,8 +78,6 @@ write.csv(df_Pedi.med01.scaled_trimmed, 'Pedi_Med01_orig features_scaled_trimmed
 
 
 
-
-
 ######## Harmonization dataset #########
 
 #### Pedi, Dx, harmo #####
@@ -139,7 +137,6 @@ df_Pedi.med01.harmo %>%
 # save output
 setwd(path_out)
 write.csv(df_Pedi.med01.harmo_trimmed, 'Pedi_Med01_orig features_harmo_trimmed.csv', row.names = F)
-
 
 
 
