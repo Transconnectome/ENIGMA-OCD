@@ -1,5 +1,4 @@
 ################### NeuroCombat Harmonization ################### 
-### reference: https://github.com/Jfortin1/ComBatHarmonization/tree/master/R
 ### procedures
 # 0. load data
 # 1. make a site variable as 'int' > assign it as vatch variable in step 5
@@ -11,7 +10,7 @@
 # 7. final shape & save the results
 
 ### 0. load data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/1.adult_Share_v.21.11.22/Data/Analysis_1_Data split_v.21.11.22")
+setwd("../ENIGMA-OCD/final/1.adult_Share_v.21.11.22/Data/Analysis_1_Data split_v.21.11.22")
 df_train <- read.csv("T.MedUnmedOCD_Adult_S.Train_547_v.211123.csv", header = T) #547
 df_test <- read.csv("T.MedUnmedOCD_Adult_S.Test_137_v.211123.csv", header = T) #137
 
@@ -183,7 +182,7 @@ test_harmo <- cbind(test_front, test_combat, test_back)
 test_harmo.cov_as <- cbind(test_front, test_combat.cov_as, test_back)
 
 # save the results
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/3.NeuroCombat/1.adult")
+setwd("../ENIGMA-OCD/final/3.NeuroCombat/1.adult")
 # train set
 write.csv(train_harmo, file="Adult_MedUnmed_train_harmo.csv", row.names = F, na = "")
 write.csv(train_harmo.cov_as, file="Adult_MedUnmed_train_harmo_cov.csv", row.names = F, na = "")
