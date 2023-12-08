@@ -8,7 +8,7 @@ library(magrittr)
 
 rm(list = ls())
 
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split/2.pediatric")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split/2.pediatric")
 
 
 #### Load dataset ####
@@ -225,16 +225,3 @@ df_pedi_total %>%
   theme_test() +
   scale_fill_manual(values = c('#c4e0a7', '#a0ce72', '#70c930', 
                                 '#60ac29', '#40731b', '#217638', '#1c320c', '#476a24' ))
-
-
-
-
-
-
-
-
-
-
-
-
-
