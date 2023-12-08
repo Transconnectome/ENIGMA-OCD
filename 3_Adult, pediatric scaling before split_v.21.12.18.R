@@ -6,11 +6,11 @@ library(caret)
 # 3. subjecykey 
 # Age also normalized
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split")
 df_T.Dx_adult <- read_csv('T.Dx_Adult_1336_v.cleaned.21.11.22.csv')
 
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/Pediatric/1_Data split")
+setwd("../ENIGMA-OCD/0.Data/Analysis/Pediatric/1_Data split")
 df_T.Dx_ped <- read_csv('T.Dx_Pediatric_317_v.21.12.18.csv')
 
 
@@ -114,9 +114,9 @@ df_T.Dx_adult_num_z_norm3 %>% xtabs(~ Dx, data = ., addNA = T) %>% addmargins() 
 df_T.Dx_ped_num_z_norm3  %>% xtabs(~ Dx, data = ., addNA = T) %>% addmargins()# 317 x 272
 
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled")
+setwd("../ENIGMA-OCD/0.Data/Analysis/2_z-scaled")
 write.csv(df_T.Dx_adult_num_z_norm3, row.names = F, file = 'T.Dx_Adult_1336_v.z.norm.21.12.18.csv')
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/Pediatric/2_z-scaled")
+setwd("../ENIGMA-OCD/0.Data/Analysis/Pediatric/2_z-scaled")
 write.csv(df_T.Dx_ped_num_z_norm3, row.names = F, file = 'T.Dx_Pediatric_317_v.z.norm.211218.csv' )
 
