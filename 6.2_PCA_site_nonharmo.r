@@ -12,12 +12,12 @@ library(ggthemes)
 ###################################
 ########## 1. load data ########## 
 ##################################
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/1.adult_Share_v.21.11.22/Data/Analysis_1_Data split_v.21.11.22")
+setwd("../ENIGMA-OCD/final/1.adult_Share_v.21.11.22/Data/Analysis_1_Data split_v.21.11.22")
 adult_train <- read.csv("T.Dx_Adult_S.Train_1068_v.211123.csv")
 adult_test <- read.csv("T.Dx_Adult_S.Test_268_v.211122.csv")
 adult_total <- read.csv("T.Dx_Adult_1336_v.cleaned.21.11.22.csv")
 
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/2.pediatric/2.afterPrep/Pediatric_data for anlaysis/1_Data split")
+setwd("../ENIGMA-OCD/final/2.pediatric/2.afterPrep/Pediatric_data for anlaysis/1_Data split")
 pedi_train <- read.csv("T.Dx_Pediatric_S.Train_254_v211218.csv")
 pedi_test <- read.csv("T.Dx_Pediatric_S.Test_63_v211218.csv")
 pedi_total <- read.csv("T.Dx_Pediatric_317_v.21.12.18.csv")
