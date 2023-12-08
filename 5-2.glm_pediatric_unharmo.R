@@ -7,7 +7,7 @@
 ##########################################################################
 
 ###### load prediction probability data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/4.h2oDAI/2.pediatric/1.Basic/After piras updated_Pediatric/Pediatric_T.Dx_scaled_21.12.18")
+setwd("../ENIGMA-OCD/final/4.h2oDAI/2.pediatric/1.Basic/After piras updated_Pediatric/Pediatric_T.Dx_scaled_21.12.18")
 train_pred <- read.csv("h2oai_experiment_T.Dx_Pediatric_21.12.18_train_predictions.csv")
 test_pred <- read.csv("h2oai_experiment_T.Dx_Pediatric_21.12.18_test_predictions.csv")
 
@@ -32,7 +32,6 @@ test_pred[,test_varName_fact] = lapply(test_pred[,test_varName_fact], factor)
 
 ##### missing values / re-coding
 library(dplyr)
-# 999
 train_pred[train_pred == 999] <- NA
 test_pred[test_pred == 999] <- NA
 
