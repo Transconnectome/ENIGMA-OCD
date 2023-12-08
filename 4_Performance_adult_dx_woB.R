@@ -13,7 +13,7 @@ proba_test <- read_csv('h2oai_experiment_adult_dx_woB_test_predictions.csv')
 
 
 #### 3. Validation result performance ####
-#### site별 데이터가 있는지 파악 #### 
+#### data check by site #### 
 
 proba_val %>% 
   xtabs(~Site + Dx, data= .) %>% 
