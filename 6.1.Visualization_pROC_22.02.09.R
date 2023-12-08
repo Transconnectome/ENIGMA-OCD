@@ -4,14 +4,14 @@ library(pROC)
 library(ggplot2)
 
 
-##### Plot ²Ù¹Ì±â #####
+##### plot setting #####
 My.plot.title <- element_text(face = "bold", hjust = 0.5, size = 20)
 My.legend.position <-  c(0.67, 0.2)
 My.legend.text <- element_text(size = 14)
 
 
 ##### Adult Dx #######
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 df_adult_dx_val <- read_csv('train_preds_custom.csv')
 df_adult_dx_test <- read_csv('test_preds_custom.csv')
 
@@ -30,7 +30,7 @@ vis_roc_adult_dx
 
 
 ##### Adult Med01 #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.UnmedOCD.HC_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.UnmedOCD.HC_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 df_adult_med01_val <- read_csv('train_preds_custom.csv')
 df_adult_med01_test <- read_csv('test_preds_custom.csv')
 
@@ -47,12 +47,8 @@ vis_roc_adult_med01 <- ggroc(list('Validation set = ROC AUC 63.96' = roc_adult_m
   theme(legend.text =element_text(size = 14)) + coord_fixed()
 
 
-
-
-
-
 ##### Adult Med12 #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.MedUnmedOCD_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.MedUnmedOCD_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 
 df_adult_med12_val <- read_csv('train_preds_custom.csv')
 df_adult_med12_test <- read_csv('test_preds_custom.csv')
@@ -69,15 +65,13 @@ vis_roc_adult_med12 <- ggroc(list('Validation set = ROC AUC 60.22' = roc_adult_m
   theme(legend.text =element_text(size = 14)) + coord_fixed()
 
 
-
-
 vis_roc_adult_dx
 vis_roc_adult_med01
 vis_roc_adult_med12
 
 
 ##### Pediatric Dx #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_dx_scaled")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_dx_scaled")
 df_pedi_dx_val <- read_csv('h2oai_experiment_T.Dx_Pediatric_21.12.18_train_predictions.csv')
 df_pedi_dx_test  <- read_csv('h2oai_experiment_T.Dx_Pediatric_21.12.18_test_predictions.csv')
 # define ROC object
@@ -94,7 +88,7 @@ vis_roc_pedi_dx <- ggroc(list('Validation set = ROC AUC 69.54' = roc_pedi_dx_val
 
 
 ##### Pediatric med 01 #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_UnmedHC_scaled")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_UnmedHC_scaled")
 df_pedi_med01_val <- read_csv('h2oai_experiment_T.UnmedOCDHC_Pediatric_21.12.18_train_predictions.csv')
 df_pedi_med01_test <- read_csv('h2oai_experiment_T.UnmedOCDHC_Pediatric_21.12.18_test_predictions.csv')
 
@@ -111,11 +105,8 @@ vis_roc_pedi_med01 <- ggroc(list('Validation set = ROC AUC 65.96' = roc_pedi_med
   theme(legend.text = My.legend.text)
 
 
-
-
-
 ##### Pediatric med 12 #####
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_MedUnmed_scaled")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_MedUnmed_scaled")
 df_pedi_med12_val <- read_csv('h2oai_experiment_T.MedUnmedOCD_Pediatric_21.12.18_train_predictions.csv')
 df_pedi_med12_test  <- read_csv('h2oai_experiment_T.MedUnmedOCD_Pediatric_21.12.18_test_predictions.csv')
 
@@ -138,10 +129,9 @@ vis_roc_pedi_med01
 vis_roc_pedi_med12
 
 
-
   
 ##### Val. Adult, Test. Pediatric ######
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/Dx_D.nonharmo_V.adult.T.ped_cv.LOSO11_737_F.age, sex_2020.10.09")
+setwd("../ENIGMA-OCD/0.Data/Dai result/Dx_D.nonharmo_V.adult.T.ped_cv.LOSO11_737_F.age, sex_2020.10.09")
 df_V.ad.T.pedi_val <- read_csv('pred_V.adult_T.ped_train.csv') 
 df_V.ad.T.pedi_test <- read_csv('pred_V.adult_T.ped_test.csv')
 
@@ -157,12 +147,3 @@ ggroc(list('Validation set = ROC AUC 63.91 (52.4-72.3)' = roc_V.ad.T.pedi_val, '
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 20)) +
   theme(legend.position = c(0.65, 0.2)) +
   theme(legend.text =element_text(size = 14))
-
-
-
-
-
-
-
-
-
