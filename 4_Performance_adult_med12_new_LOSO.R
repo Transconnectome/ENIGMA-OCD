@@ -3,7 +3,7 @@ library(magrittr)
 library(pROC)
 
 #### 1. Set path 
-setwd("C:/Users/±Ë∫∏∞‚/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.MedUnmedOCD_adult_new_LOSO_22.03.07")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.MedUnmedOCD_adult_new_LOSO_22.03.07")
 
 
 #### 2. Load data 
@@ -12,7 +12,7 @@ proba_test <- read_csv('h2oai_experiment_adult_med12_new_test_predictions.csv')
 
 
 #### 3. Validation result performance ####
-#### site∫∞ µ•¿Ã≈Õ∞° ¿÷¥¬¡ˆ ∆ƒæ« #### 
+#### data check by site #### 
 
 proba_val %>% 
   xtabs(~Site + Med.UnmedOCD, data= .) %>% 
@@ -25,7 +25,7 @@ proba_test %>%
 
 
 #### Validation set - performance ####
-#### §§ 1. draw ROC curve of each site ####
+#### „ÅÑ 1. draw ROC curve of each site ####
 
 # Amsterdam.roc <- proba_val %>%
 #   filter(Site == 'Amsterdam') %>%
@@ -68,7 +68,7 @@ Seoul.roc <- proba_val %>%
 #   roc(Med.UnmedOCD, Med_UnmedOCD.1)
 
 
-#### §§ 2. auc ####
+#### „ÅÑ 2. auc ####
 # auc(Amsterdam.roc)
 auc(Bangalore.roc)
 auc(Capetown.roc)
@@ -106,11 +106,11 @@ coords(Munich.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specif
 coords(Rome.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
 coords(Saopaulo.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
 coords(Seoul.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
-# coords(Shanghai.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
+coords(Shanghai.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
 
 
-# # ci.coords(Amsterdam.roc, x='best' , input = "threshold", 
-#           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
+ci.coords(Amsterdam.roc, x='best' , input = "threshold", 
+           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
 
 ci.coords(Bangalore.roc, x="best", input = "threshold", 
           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
@@ -119,8 +119,8 @@ ci.coords(Capetown.roc, x='best', input = "threshold",
           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
 
 
-# ci.coords(Kyoto.roc, x='best', input = "threshold", 
-#           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
+ci.coords(Kyoto.roc, x='best', input = "threshold", 
+           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
 
 ci.coords(Milan.roc, x='best' , input = "threshold", 
           ret=c("accuracy", "sensitivity", "specificity"),  best.policy = 'random')
@@ -141,9 +141,9 @@ ci.coords(Saopaulo.roc, x='best' , input = "threshold",
 
 ci.coords(Seoul.roc, x='best', input = "threshold", 
           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
-# 
-# ci.coords(Shanghai.roc, x='best', input = "threshold", 
-#           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
+ 
+ci.coords(Shanghai.roc, x='best', input = "threshold", 
+           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
 
 
 #### trimming output ####
@@ -182,9 +182,8 @@ write.csv(temp_frame, row.names = T, 'res_proc_val.csv')
 
 
 
-
 #### Replication set - performance ####
-#### §§ 1. draw ROC curve of each site ####
+#### 1. draw ROC curve of each site ####
 
 test.roc <- proba_test %>% 
   roc(Med.UnmedOCD, Med_UnmedOCD.1)
@@ -193,7 +192,3 @@ ci.auc(test.roc)
 coords(test.roc, "best", ret=c("threshold", "accuracy", "sensitivity", "specificity"), transpose = FALSE)
 ci.coords(test.roc, x='best' , input = "threshold", 
           ret=c("accuracy", "sensitivity", "specificity"), best.policy = 'random')
-
-
-
-
