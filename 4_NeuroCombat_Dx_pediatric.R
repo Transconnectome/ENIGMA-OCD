@@ -93,12 +93,6 @@ miss_var_summary(brain_test)
 #View(miss_var_summary(brain_test)) #now, there are no missing values
 
 brain_test_x <- brain_test #back up
-#brain_test_x[,sapply(brain_test_x, is.numeric)] <- lapply(brain_test_x[,sapply(brain_test_x, is.numeric)], 
-#                                                          function(x){
-#                                                            x <- ifelse(is.na(x), median(x, na.rm  = TRUE), x)
-#                                                          }
-#)
-#miss_case_summary(brain_train_x) #now, there are no missing values
 
 train_brain_z <- brain_train_x
 test_brain_z <- brain_test_x
