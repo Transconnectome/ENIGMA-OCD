@@ -13,7 +13,7 @@ library(knitr)
 ########## 1. load data ########## 
 ##########################################################################
 ###### load prediction probability data
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 train_pred <- read.csv("train_preds_custom.csv")
 test_pred <- read.csv("test_preds_custom.csv")
 
@@ -104,8 +104,6 @@ test_pred_OCD %>% xtabs(~Hoard, data = .)
 ##########################################################################
 ########## 4-2. [stepwise regression] association between clinical variables and Preds ########## 
 ##########################################################################
-#(ref) https://mindscale.kr/course/basic-stat-r/stepwise/
-#(ref) http://www.sthda.com/english/articles/37-model-selection-essentials-in-r/154-stepwise-regression-essentials-in-r/
 #################### 4.2.1. train set #################### 
 #names(train_pred_OCD)[8:20]
 #[1] "Med"       "AO"        "Dur"       "Sev"       "Agr_Check" "Clean"     
@@ -161,14 +159,6 @@ aov.final_test <- test_pred_OCD_step_na %>% rstatix::anova_test(Dx.1 ~ Site + Me
 rstatix::get_anova_table(aov.final_test)
 
 
-
-
-
-
-
-
-
-
 ##################################################################
 ## ENIGMA-OCD pediatric GLM ##
 ##################################################################
@@ -177,7 +167,7 @@ rstatix::get_anova_table(aov.final_test)
 ########## 1. load data ########## 
 ##########################################################################
 ###### load prediction probability data
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_dx_scaled")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/Pedi_dx_scaled")
 
 pedi_train_pred <- read.csv("h2oai_experiment_T.Dx_Pediatric_21.12.18_train_predictions.csv")
 pedi_test_pred <- read.csv("h2oai_experiment_T.Dx_Pediatric_21.12.18_test_predictions.csv")
@@ -279,8 +269,7 @@ pedi_test_pred_OCD %>% xtabs(~Hoard, data = .)
 ##########################################################################
 ########## 4-2. [stepwise regression] association between clinical variables and Preds ########## 
 ##########################################################################
-#(ref) https://mindscale.kr/course/basic-stat-r/stepwise/
-#(ref) http://www.sthda.com/english/articles/37-model-selection-essentials-in-r/154-stepwise-regression-essentials-in-r/
+
 #################### 4.2.1. train set #################### 
 #names(train_pred_OCD)[8:20]
 #[1] "Med"       "AO"        "Dur"       "Sev"       "Agr_Check" "Clean"     
@@ -311,7 +300,7 @@ pedi_test_pred_OCD_step <-  pedi_test_pred_OCD[,colnames(pedi_test_pred_OCD)[c(3
 pedi_test_pred_OCD_step_na <- na.omit(pedi_test_pred_OCD_step) # 23 x 17
 
 ################### 1) stepwise regression model identified in train set
-# cannot be applied due to data differences (contrasts´Â ¿À·ÎÁö 2 ¶Ç´Â ±× ÀÌ»óÀÇ levelµéÀ» °¡Áø ¿äÀÎµé¿¡¸¸ Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù)
+# cannot be applied due to data differences (contrastsëŠ” ì˜¤ë¡œì§€ 2 ë˜ëŠ” ê·¸ ì´ìƒì˜ levelë“¤ì„ ê°€ì§„ ìš”ì¸ë“¤ì—ë§Œ ì ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤)
 
 pedi_model.steptrain_test <- lm(Dx.1 ~  Site + Dep + Agr_Check + Age, data = pedi_test_pred_OCD_step_na)
 summary(pedi_model.steptrain_test)
@@ -337,17 +326,4 @@ summary(pedi_model.final_test)
 pedi_aov.final_test <- pedi_test_pred_OCD_step_na %>% rstatix::anova_test(Dx.1 ~Med + Agr_Check + Dep + Sex_Rel)
 
 rstatix::get_anova_table(pedi_aov.final_test)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
