@@ -6,7 +6,7 @@ library(magrittr)
 rm(list = ls())
 
 
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/3.Documentations/Tables/4. Feature importance tables/4.1. Feature importnace_DAI_adult/Trimmed_by code")
+setwd("../ENIGMA-OCD/3.Documentations/Tables/4. Feature importance tables/4.1. Feature importnace_DAI_adult/Trimmed_by code")
 
 
 # Load dataset 
@@ -28,7 +28,6 @@ plot_dx.adult
 # plot_dx.adult <- plot_dx.adult + coord_fixed()
 
 
-
 #### Adult, Med 01, scaled ####
 setwd(path_raw.adult)
 df_med01.adult <- read_csv('Med01_orig features_scaled_trimmed.csv')
@@ -44,7 +43,6 @@ df_med01.adult %>%
 
 
 plot_med01.adult
-
 
 
 
