@@ -2,7 +2,7 @@ library(tidyverse)
 library(magrittr)
 rm(list = ls())
 # path
-path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 
 #####################################
 ##### adult - med01 #####
@@ -59,7 +59,7 @@ write.csv(row.names = F, df_pedi_med12_test2, 'T.MedUnmedOCD_Pediatric_S.Test2_4
 ##### adult - bangalore (excl) #####
 #####################################
 rm(list = ls())
-path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 
 setwd(paste0(path_source, '/1.adult'))
 df_adult_dx_train <- read_csv('T.Dx_Adult_S.Train_1069_v.z.norm.211123.csv')
@@ -81,14 +81,14 @@ write.csv(row.names = F, df_adult_dx_test, 'T.Dx_Adult_S.Test2_208_v.z.norm.2203
 #####################################
 #####################################
 rm(list = ls())
-path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 
 
 #####################################
 ###### Data description of extra experiments ##########
 
 ##### 1. adult - bangalore 제외
-path_source <- "../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
+path_source <- "../ENIGMA-OCD/0.Data/Analysis/2_z-scaled"
 setwd(paste0(path_source, '/1.adult'))
 getwd()
 
