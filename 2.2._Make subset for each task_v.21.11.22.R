@@ -1,6 +1,6 @@
 
 #### Load dataset ####
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split")
 df_11site_merged_Adult <- read.csv('T.Dx_Adult_1336_v.cleaned.21.11.22.csv', header = T, sep = ",", na.strings = c("NA", "")) %>% as_tibble()
 
 table(df_11site_merged_Adult$Dx, df_11site_merged_Adult$Med)
@@ -49,7 +49,7 @@ df_11site_merged_Adult_Only.MedUnmedOCD <- df_11site_merged_Adult_Only.MedUnmedO
 df_11site_merged_Adult_Only.UnmedOCDHC <- df_11site_merged_Adult_Only.UnmedOCDHC %>% relocate(subjectkey, UnmedOCD.HC, Site)
 
 # 8. save dataset
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split")
 
 #write.csv(df_11site_merged_Adult, file = 'T.Dx_Adult_1336_v.21.11.22.csv', row.names = FALSE)
 write.csv(df_11site_merged_Adult_Only.MedUnmedOCD, file = 'T.MedUnmedOCD_Adult_684_v.cleaned.21.11.22.csv', row.names = FALSE)
