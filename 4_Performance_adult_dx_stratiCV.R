@@ -4,14 +4,14 @@ library(magrittr)
 library(pROC)
 
 #### 1. Set path 
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_adult_stratiCV_22.03.07")
+setwd("../ENIGMA-OCD/0.Data/Dai result/After piras updated_Adult/T.Dx_adult_stratiCV_22.03.07")
 #### 2. Load data 
 proba_val <- read_csv('h2oai_experiment_adult_dx_stratiCV_train_predictions.csv')
 proba_test <- read_csv('h2oai_experiment_adult_dx_stratiCV_test_predictions.csv')
 
 
 #### 3. Validation result performance ####
-#### siteº° µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö ÆÄ¾Ç #### 
+#### siteë³„ ë°ì´í„°ê°€ ìžˆëŠ”ì§€ íŒŒì•… #### 
 
 proba_val %>% 
   xtabs(~Site + Dx, data= .) %>% 
@@ -24,7 +24,7 @@ proba_test %>%
 
 
 #### Validation set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### ã„´ 1. draw ROC curve of each site ####
 #### trimming output ####
 
 col_names <- c('auc_l', 'auc_mean', 'auc_h', 'threshold', 'acc_mean', 'sensi_mean', 'speci_mean', 
@@ -60,7 +60,7 @@ write.csv(temp_frame, row.names = T, 'res_proc_val.csv')
 
 
 #### Replication set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### ã„´ 1. draw ROC curve of each site ####
 
 test.roc <- proba_test %>% 
   roc(Dx, Dx.1)
