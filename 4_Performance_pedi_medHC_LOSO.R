@@ -2,7 +2,7 @@ rm(list = ls())
 library(tidyverse)
 library(magrittr)
 library(pROC)
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/MedHC_pedi_LOSO")
+setwd("C:/Users/ê¹€ë³´ê²¸/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Dai result/After piras updated_Pediatric/MedHC_pedi_LOSO")
 
 
 #### 2. Load data 
@@ -10,7 +10,7 @@ proba_val <- read_csv('h2oai_experiment_MedHC_pedi_LOSO_train_predictions.csv')
 proba_test <- read_csv('h2oai_experiment_MedHC_pedi_LOSO_test_predictions.csv')
 
 #### 3. Validation result performance ####
-#### siteº° µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö ÆÄ¾Ç => ¾ø´Â µ¥ÀÌÅÍ: Amsterdam, Kyoto, Shanghai    
+#### data check by site; cf) Amsterdam, Kyoto, Shanghai    
 
 proba_val %>% 
   xtabs(~Site + Dx, data= .) %>% 
@@ -22,7 +22,7 @@ proba_test %>%
 
 
 #### Validation set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### 1. draw ROC curve of each site ####
 #### trimming output ####
 
 col_names <- c('auc_l', 'auc_mean', 'auc_h', 'threshold', 'acc_mean', 'sensi_mean', 'speci_mean', 
@@ -57,7 +57,7 @@ write.csv(temp_frame, row.names = T, 'res_proc_val.csv')
 
 
 #### Replication set - performance ####
-#### ¤¤ 1. draw ROC curve of each site ####
+#### 1. draw ROC curve of each site ####
 
 test.roc <- proba_test %>% 
   roc(MedHC, MedHC.1)
