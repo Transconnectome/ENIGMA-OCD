@@ -6,7 +6,7 @@ library(tidyverse)
 library(naniar)
 library(skimr)
 
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Piras_Shanghai updated_v.2021.11.11")
+setwd("../ENIGMA-OCD/0.Data/0_Raw_data/Piras_Shanghai updated_v.2021.11.11")
 
 #### Load dataset ####
 
@@ -60,20 +60,17 @@ vis_miss(ShanghaicombinedROItable)
 
 #### writie csv ####
 # combined ROI
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
+setwd("../ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/1.FA")
 write.csv(ShanghaicombinedROItable, 'shangai_combinedROItable_updated.v.21.11.13.csv', row.names = FALSE)
 
 # MD
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
+setwd("../ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/2.MD")
 write.csv(ShanghaiMD, 'Shangai_combinedROItable_MD_updated.v.21.11.13.csv', row.names = FALSE)
 
 # RD
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
+setwd("../ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/3.RD")
 write.csv(ShanghaiRD, 'Shangai_combinedROItable_RD_updated.v.21.11.13.csv', row.names = FALSE)
 
 # AD
-setwd("../Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
+setwd("../ENIGMA-OCD/0.Data/0_Raw_data/Data_Dti/4.AD")
 write.csv(ShanghaiAD, 'Shangai_combinedROItable_AD_updated.v.21.11.13.csv', row.names = FALSE)
-
-
-
