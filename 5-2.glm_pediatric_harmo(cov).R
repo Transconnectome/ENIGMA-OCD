@@ -7,7 +7,7 @@
 ##########################################################################
 
 ###### load prediction probability data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/4.h2oDAI/2.pediatric/2.NeuroCombat/After piras updated_Pediatric_21.12.22/Pedi_dx_harmo.cov")
+setwd("../ENIGMA-OCD/final/4.h2oDAI/2.pediatric/2.NeuroCombat/After piras updated_Pediatric_21.12.22/Pedi_dx_harmo.cov")
 train_pred <- read.csv("h2oai_experiment_ped_Dx_harmo.cov_21.12.22_train_predictions.csv")
 test_pred <- read.csv("h2oai_experiment_ped_Dx_harmo.cov_21.12.22_test_predictions.csv")
 
@@ -31,7 +31,6 @@ test_pred[,test_varName_fact] = lapply(test_pred[,test_varName_fact], factor)
 
 ##### missing values / re-coding
 library(dplyr)
-# 999
 train_pred[train_pred == 999] <- NA
 test_pred[test_pred == 999] <- NA
 
@@ -45,7 +44,7 @@ test_pred_OCD <- test_pred %>% filter(Dx == 1)
 ##### missing value processing based on ENIGMA-OCD clinical criteria
 # [HC] train_pred_HC, test_pred_HC
 # MED=0 / AO - / Dur - / Sev - / Agr_Check - / Clean - / Sex_Rel - / Hoard - / Ord - / Anx 0 / CurAnx 0 / Dep 0 / CurDep 0
-# -
+
 
 # [OCD] train_pred_OCD, test_pred_OCD
 train_pred_OCD$Med[train_pred_OCD$Med == 0] <- NA
