@@ -7,7 +7,7 @@
 ##########################################################################
 
 ###### load prediction probability data
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/connectome21/2021-1/project/ENIGMA-OCD/final/4.h2oDAI/1.adult/1.Basic/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
+setwd("../ENIGMA-OCD/final/4.h2oDAI/1.adult/1.Basic/T.Dx_D.nonharmo scaled only adult_cv.LOSO_777_F.age.sex_21.11.23")
 train_pred <- read.csv("train_preds_custom.csv")
 test_pred <- read.csv("test_preds_custom.csv")
 
@@ -104,7 +104,6 @@ qqline(test_pred_OCD$Dx.1)
 ##########################################################################
 ########## 3. sample characteristics ########## 
 ##########################################################################
-
 ##### description analysis of "Dx.1" (prediction probability) by "dx (diagnosis)" group
 train_pred %>% 
   group_by(Dx) %>%
@@ -353,7 +352,6 @@ table(train_pred_HC_x$False_prediction_HC)
 addmargins(xtabs(formula = ~ Site + True_prediction_HC, data = train_pred_HC_x)) # 
 
 ######################
-
 # That is, even when adjusting for covariates (age, sex, site, and mean DTI metrics (FA, MD, AD, RD) , the site variability in classification performance persisted in OCD patients (????2 = 57.194, p< .001) and HCs (????2 = 50.303, p< .001). 
 
 # 1. In OCD
