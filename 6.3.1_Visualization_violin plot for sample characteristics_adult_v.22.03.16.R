@@ -5,8 +5,10 @@ library(ggthemes)
 library(rstatix)
 library(ggpubr)
 library(magrittr)
+
 rm(list = ls())
-setwd("C:/Users/±èº¸°â/Desktop/Connectome/study-enigma ocd/ENIGMA-OCD/0.Data/Analysis/1_Data split/1.adult")
+setwd("../ENIGMA-OCD/0.Data/Analysis/1_Data split/1.adult")
+
 #### Load dataset ####
 df_adult_total <- read_csv('T.Dx_Adult_1336_v.cleaned.21.11.22.csv') 
 
